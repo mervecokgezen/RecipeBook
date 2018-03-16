@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:layout_margin="16dp"
+    tools:context="com.examples.vestel.recipebook.AddFoodActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/grey"
+            android:text="TARİFLERİM"
+            android:textColor="@color/white"
+            android:layout_weight="0.20"
+            android:id="@+id/btn_recipe"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/goaddfood"
+            android:layout_weight="0.66"
+            android:layout_marginLeft="2dp"
+            android:background="@color/colorAccent"
+            android:text="+ TARİF EKLE"
+            android:textColor="@color/white" />
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.20"
+            android:background="@color/grey"
+            android:layout_marginLeft="2dp"
+            android:id="@+id/btn_profil"
+            android:text="PROFİL" android:textColor="@color/white"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yemeğin Adı : "/>
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="yemeğin adı"
+            android:id="@+id/edt_foodname"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:text="Yemeğin Malzemeleri : "/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="yemeğin malzemeleri"
+            android:id="@+id/edt_foodmetarials"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_marginTop="12dp"
+            android:layout_height="wrap_content"
+            android:text="Yemeğin Yapılışı : "
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="yemeğin yapılışı"
+            android:id="@+id/edt_cooking"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:layout_marginTop="16dp"
+            android:text="TARİFİ Ekle"
+            android:textColor="@color/white"
+            android:id="@+id/btn_addfood"/>
+
+    </LinearLayout>
+</LinearLayout>

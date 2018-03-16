@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context="com.examples.vestel.recipebook.CreateAcActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name - Suname :"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="name - surname"
+            android:id="@+id/edtnamesurname"/>
+        <TextView
+            android:layout_marginTop="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mail :"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e-mail"
+            android:id="@+id/edtemail"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Password :"
+            android:layout_marginTop="12dp"/>
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="password"
+            android:inputType="numberPassword"
+            android:id="@+id/edtpass"/>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_gravity="right"
+            android:background="@color/colorAccent"
+            android:layout_height="wrap_content"
+            android:text="Sıgn up"
+            android:textColor="@color/white"
+            android:layout_marginTop="16dp"
+            android:id="@+id/btnsignup"/>
+
+
+
+    </LinearLayout>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BACK TO LOGIN!"
+        android:gravity="bottom"
+        android:layout_marginTop="50dp"
+        android:id="@+id/tvbacktologin"/>
+</LinearLayout>

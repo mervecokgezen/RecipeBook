@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.examples.vestel.recipebook">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/chef"
+        android:label="Tarif Defterim"
+        android:roundIcon="@drawable/chef"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".CreateAcActivity"
+            android:label="Yeni Kullanıcı"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".RecipesActivity"
+            android:theme="@style/Theme.AppCompat.NoActionBar" />
+        <activity
+            android:name=".AddFoodActivity"
+            android:label="Tarif Ekle" />
+        <activity
+            android:name=".FoodDetailActivity"
+            android:label="Tarif Detay" />
+        <activity android:name=".ProfilActivity"></activity>
+    </application>
+
+</manifest>
