@@ -38,7 +38,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="by: merveakgormus"
+                    android:text="Ekleyen : ..."
                     android:id="@+id/tv_currenuser"/>
             </LinearLayout>
 

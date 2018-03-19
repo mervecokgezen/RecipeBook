@@ -22,7 +22,7 @@ public class AddFoodActivity extends AppCompatActivity {
     TextView gorecipes;
 
 
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference, dbRef;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
 
@@ -41,6 +41,7 @@ public class AddFoodActivity extends AppCompatActivity {
         //gorecipes           = (TextView)findViewById(R.id.tv_backreceips);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Recipes");
+        dbRef = FirebaseDatabase.getInstance().getReference("Users");
         firebaseAuth      = FirebaseAuth.getInstance();
         firebaseUser      = firebaseAuth.getCurrentUser();
 
@@ -53,7 +54,7 @@ public class AddFoodActivity extends AppCompatActivity {
                 cooking         = edt_cooking.getText().toString();
                 currentby = "Ekleyen : Merve";
 
-                AddFood(foodname, foodmetarials, cooking,currentby);
+                AddFood(foodname, foodmetarials, cooking);
 
                 Toast.makeText(AddFoodActivity.this,"Add Succes!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(AddFoodActivity.this, RecipesActivity.class));
@@ -77,12 +78,15 @@ public class AddFoodActivity extends AppCompatActivity {
         });
     }
 
-    public void AddFood(String food_name, String food_metarials, String food_make, String currentby){
+    public void AddFood(String food_name, String food_metarials, String food_make){
 
-        Food food = new Food(food_name, food_metarials, food_make, currentby);
 
         String ContactsIDFromServer = databaseReference.push().getKey();
         String userid = firebaseAuth.getCurrentUser().getUid();
+
+        String supplementary = dbRef.child(userid).child("namesurname").toString();
+
+        Food food = new Food(food_name, food_metarials, food_make, ContactsIDFromServer, supplementary);
         databaseReference.child(userid).child(ContactsIDFromServer).setValue(food);
 
     }

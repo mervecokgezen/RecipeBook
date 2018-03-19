@@ -38,56 +38,62 @@
             android:id="@+id/btn_profil"
             android:text="PROFİL" android:textColor="@color/white"/>
     </LinearLayout>
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:orientation="vertical"
-        android:layout_marginTop="20dp"
-        android:layout_height="wrap_content">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Yemeğin Adı : "/>
-        <EditText
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="yemeğin adı"
-            android:id="@+id/edt_foodname"
-            />
-        <TextView
-            android:layout_width="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_height="wrap_content">
 
-            android:layout_marginTop="12dp"
-            android:layout_height="wrap_content"
-            android:text="Yemeğin Malzemeleri : "/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yemeğin Adı : "/>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="yemeğin adı"
+                android:id="@+id/edt_foodname"
+                />
+            <TextView
+                android:layout_width="wrap_content"
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="yemeğin malzemeleri"
-            android:id="@+id/edt_foodmetarials"/>
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content"
+                android:text="Yemeğin Malzemeleri : "/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_marginTop="12dp"
-            android:layout_height="wrap_content"
-            android:text="Yemeğin Yapılışı : "
-            />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="yemeğin malzemeleri"
+                android:id="@+id/edt_foodmetarials"/>
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="yemeğin yapılışı"
-            android:id="@+id/edt_cooking"/>
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
-            android:layout_marginTop="16dp"
-            android:text="TARİFİ Ekle"
-            android:textColor="@color/white"
-            android:id="@+id/btn_addfood"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_marginTop="12dp"
+                android:layout_height="wrap_content"
+                android:text="Yemeğin Yapılışı : "
+                />
 
-    </LinearLayout>
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="yemeğin yapılışı"
+                android:id="@+id/edt_cooking"/>
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:layout_marginTop="16dp"
+                android:text="TARİFİ Ekle"
+                android:textColor="@color/white"
+                android:layout_marginBottom="16dp"
+                android:id="@+id/btn_addfood"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+
 </LinearLayout>

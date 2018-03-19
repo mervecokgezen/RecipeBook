@@ -11,6 +11,16 @@ public class Food {
     private String food_items;
     private String cooking;
 
+    public String getSupplementary() {
+        return supplementary;
+    }
+
+    public void setSupplementary(String supplementary) {
+        this.supplementary = supplementary;
+    }
+
+    private String supplementary;
+
     public String getCurrentby() {
         return currentby;
     }
@@ -21,11 +31,12 @@ public class Food {
 
     private String currentby;
 
-    public Food(String food_name, String food_items, String cooking, String currentby) {
+    public Food(String food_name, String food_items, String cooking, String currentby, String supplementary) {
         this.food_name = food_name;
         this.food_items = food_items;
         this.cooking = cooking;
         this.currentby = currentby;
+        this.supplementary = supplementary;
     }
 
     public String getFood_name() {

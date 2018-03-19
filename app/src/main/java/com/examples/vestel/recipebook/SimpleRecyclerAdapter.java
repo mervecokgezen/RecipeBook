@@ -59,7 +59,7 @@ public class SimpleRecyclerAdapter extends RecyclerView.Adapter<SimpleRecyclerAd
     @Override
     public void onBindViewHolder(SimpleRecyclerAdapter.ViewHolder holder, int position) {
         holder.tv_foodname.setText(list_food.get(position).getFood_name());
-        holder.tv_currentby.setText(list_food.get(position).getCurrentby());
+        //holder.tv_currentby.setText(list_food.get(position).getCurrentby());
     }
 
     @Override

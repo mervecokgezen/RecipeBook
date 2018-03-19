@@ -46,7 +46,7 @@ public class RecipesActivity extends AppCompatActivity {
 
         firebaseAuth      = FirebaseAuth.getInstance();
         firebaseUser      = firebaseAuth.getCurrentUser();
-        String userid = firebaseAuth.getCurrentUser().getUid();
+        String userid     = firebaseAuth.getCurrentUser().getUid();
 
         firebaseDatabase    = FirebaseDatabase.getInstance();
         databaseReference   = firebaseDatabase.getReference().child("Recipes").child(userid);
@@ -60,7 +60,7 @@ public class RecipesActivity extends AppCompatActivity {
                 list_food = new ArrayList<Food>();
                 for(DataSnapshot ds :dataSnapshot.getChildren())
                 {
-                    f = new Food(ds.child("food_name").getValue().toString(),ds.child("food_items").getValue().toString(),ds.child("cooking").getValue().toString(), ds.child("currentby").getValue().toString());
+                    f = new Food(ds.child("food_name").getValue().toString(),ds.child("food_items").getValue().toString(),ds.child("cooking").getValue().toString(), ds.child("currentby").getValue().toString(), ds.child("supplementary").getValue().toString());
                     list_food.add(f);
 
 
@@ -79,12 +79,13 @@ public class RecipesActivity extends AppCompatActivity {
                     public void onItemClick(View v, int position) {
                         //Log.d("position", "Tıklanan Pozisyon:" + position);
                         Food food = list_food.get(position);
-                        Intent i = new Intent(RecipesActivity.this, FoodDetailActivity.class);
+                        Intent i  = new Intent(RecipesActivity.this, FoodDetailActivity.class);
 
                         i.putExtra("tv_foodname", food.getFood_name());
                         i.putExtra("tv_fooditems", food.getFood_items());
                         i.putExtra("tv_cooking", food.getCooking());
                         i.putExtra("tv_currentby", food.getCurrentby());
+                        i.putExtra("supplementary", food.getSupplementary());
                         startActivity(i);
 
                     }
