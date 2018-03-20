@@ -25,12 +25,13 @@ public class RecipesActivity extends AppCompatActivity {
     private List<Food> list_food;
     private DatabaseReference databaseReference ;
     private FirebaseDatabase firebaseDatabase ;
-    FirebaseAuth  firebaseAuth;
-    FirebaseUser firebaseUser;
-    String ContactIDFromServer;
-    Food f;
+    private FirebaseAuth  firebaseAuth;
+    private FirebaseUser firebaseUser;
+    private String ContactIDFromServer;
+    private Food f;
 
     Button gofoodadd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

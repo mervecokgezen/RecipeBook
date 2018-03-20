@@ -3,6 +3,7 @@
     package="com.examples.vestel.recipebook">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
 
     <application
         android:allowBackup="true"
@@ -31,7 +32,8 @@
         <activity
             android:name=".FoodDetailActivity"
             android:label="Tarif Detay" />
-        <activity android:name=".ProfilActivity"></activity>
+        <activity android:name=".ProfilActivity" />
+        <activity android:name=".AllRecipesActivity"></activity>
     </application>
 
 </manifest>

@@ -9,7 +9,17 @@
     android:gravity="center"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Tarif Defteri"
+        android:textSize="56sp"
+        android:textColor="@color/colorAccent"
+        android:fontFamily="cursive"/>
+
     <ScrollView
+        android:layout_gravity="center"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
     <LinearLayout
@@ -23,14 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_gravity="center"
-            android:text="Tarif Defteri"
-            android:textSize="56sp"
-            android:textColor="@color/colorAccent"
-            android:fontFamily="cursive"/>
+
 
         <TextView
             android:layout_marginTop="20dp"
@@ -72,6 +75,8 @@
 
 
     </LinearLayout>
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -86,7 +91,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="12dp"
-            android:text="Yeni Kullanıcılar Buraya!.."
+            android:text="YENİ KULLANICI!"
             android:layout_gravity="center"
             android:textSize="14sp"
             android:id="@+id/tvcreateac"
@@ -97,13 +102,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="12dp"
-            android:text="VEYA"/>
+            android:text="veya"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_marginTop="12dp"
             android:textSize="14sp"
             android:layout_height="wrap_content"
-            android:text="Giriş Yapmadan Devam Et!.."/>
+            android:text="GİRİŞ YAPMADAN DEVAM ET!"/>
     </LinearLayout>
+
     </ScrollView>
 </LinearLayout>

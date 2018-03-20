@@ -52,11 +52,11 @@ public class AddFoodActivity extends AppCompatActivity {
                 foodname        = edt_foodname.getText().toString();
                 foodmetarials   = edt_foodmetarials.getText().toString();
                 cooking         = edt_cooking.getText().toString();
-                currentby = "Ekleyen : Merve";
+                //currentby = "Ekleyen : Merve";
 
                 AddFood(foodname, foodmetarials, cooking);
 
-                Toast.makeText(AddFoodActivity.this,"Add Succes!", Toast.LENGTH_LONG).show();
+                Toast.makeText(AddFoodActivity.this,"Yeni Tarif Eklediniz :)", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(AddFoodActivity.this, RecipesActivity.class));
 
             }
@@ -84,7 +84,7 @@ public class AddFoodActivity extends AppCompatActivity {
         String ContactsIDFromServer = databaseReference.push().getKey();
         String userid = firebaseAuth.getCurrentUser().getUid();
 
-        String supplementary = dbRef.child(userid).child("namesurname").toString();
+        String supplementary = "Merve Akgörmüş";
 
         Food food = new Food(food_name, food_metarials, food_make, ContactsIDFromServer, supplementary);
         databaseReference.child(userid).child(ContactsIDFromServer).setValue(food);

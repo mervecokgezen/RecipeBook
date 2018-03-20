@@ -1,6 +1,8 @@
 package com.examples.vestel.recipebook;
 
+import android.content.Context;
 import android.content.Intent;
+import android.os.PowerManager;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,17 +29,23 @@ public class MainActivity extends AppCompatActivity {
     FirebaseUser firebaseUser;
     private FirebaseAuth mAuth;
 
+    private PowerManager.WakeLock wakeLock;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        PowerManager powerManager = (PowerManager)getSystemService(Context.POWER_SERVICE);
+        wakeLock = powerManager.newWakeLock(PowerManager.SCREEN_DIM_WAKE_LOCK | PowerManager.ON_AFTER_RELEASE,"Test");
+        wakeLock.acquire();
+
         mAuth = FirebaseAuth.getInstance();
         firebaseUser = mAuth.getCurrentUser();
 
-        edtmail  = (EditText)findViewById(R.id.edtmail);
-        edtpass  = (EditText)findViewById(R.id.edtsifre);
-        btnlogin = (Button)findViewById(R.id.btnlogin);
+        edtmail    = (EditText)findViewById(R.id.edtmail);
+        edtpass    = (EditText)findViewById(R.id.edtsifre);
+        btnlogin   = (Button)findViewById(R.id.btnlogin);
         tvcreateac = (TextView)findViewById(R.id.tvcreateac);
 
         tvcreateac.setOnClickListener(new View.OnClickListener() {
@@ -54,12 +62,18 @@ public class MainActivity extends AppCompatActivity {
                 pass = edtpass.getText().toString();
 
                 if(mail.isEmpty() || pass.isEmpty()){
-                    Toast.makeText(getApplicationContext(), "Fill in required fields.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext(), "Mail veya Şifre alanı boş olamaz!..", Toast.LENGTH_LONG).show();
                 }else{
                     LoginFunc();
                 }
             }
         });
+
+        if (firebaseUser != null) {
+           startActivity(new Intent(MainActivity.this, RecipesActivity.class));
+        } else {
+            Toast.makeText(MainActivity.this, "Kullanıcı girişi yapınız!..", Toast.LENGTH_LONG).show();
+        }
 
 
     }

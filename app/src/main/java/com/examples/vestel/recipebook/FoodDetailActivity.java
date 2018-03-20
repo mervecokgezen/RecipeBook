@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -24,19 +25,12 @@ public class FoodDetailActivity extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
 
-
     Button btn_recipe, btn_addfoodgo, btn_profil, btn_delete;
-
-    private String current;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food_detail);
-        //databaseReference.child(userid).child(ContactsIDFromServer).setValue(food);
-
-       // String userid = firebaseAuth.getCurrentUser().getUid();
-        //String ContactsIDFromServer = databaseReference.push().getKey();
 
         firebaseAuth      = FirebaseAuth.getInstance();
         firebaseUser      = firebaseAuth.getCurrentUser();
@@ -53,15 +47,10 @@ public class FoodDetailActivity extends AppCompatActivity {
         tv_foodname.setText(getIntent().getStringExtra("tv_foodname"));
         tv_fooditems.setText(getIntent().getStringExtra("tv_fooditems"));
         tv_cooking.setText(getIntent().getStringExtra("tv_cooking"));
-        //tv_currentby.setText(getIntent().getStringExtra("tv_currentby"));
-
-
 
         btn_recipe      = (Button)findViewById(R.id.btn_recipe);
         btn_addfoodgo   = (Button)findViewById(R.id.btn_addfood);
         btn_profil      = (Button)findViewById(R.id.btn_profil);
-
-        // final String fname = getIntent().getStringExtra("tv_foodname");
 
         btn_recipe.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,17 +79,15 @@ public class FoodDetailActivity extends AppCompatActivity {
                 databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(DataSnapshot dataSnapshot) {
-
                         String userid = firebaseAuth.getCurrentUser().getUid();
                         //String ContactsIDFromServer = databaseReference.getKey();// = Recipes
 
                         databaseReference = firebaseDatabase.getReference().child("Recipes").child(userid).child(getIntent().getStringExtra("tv_currentby"));
                         databaseReference.removeValue();
 
+                        Toast.makeText(FoodDetailActivity.this, "Tarifi Sildiniz :)", Toast.LENGTH_LONG).show();
                         startActivity(new Intent(FoodDetailActivity.this, RecipesActivity.class));
-
                     }
-
                     @Override
                     public void onCancelled(DatabaseError databaseError) {
 
