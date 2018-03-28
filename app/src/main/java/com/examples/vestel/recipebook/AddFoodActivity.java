@@ -19,15 +19,12 @@ public class AddFoodActivity extends AppCompatActivity {
     EditText edt_foodname, edt_foodmetarials, edt_cooking;
     String foodname, foodmetarials, cooking, currentby;
     Button btn_addfood;
-    TextView gorecipes;
-
 
     DatabaseReference databaseReference, dbRef;
     FirebaseAuth firebaseAuth;
     FirebaseUser firebaseUser;
 
     Button btn_recipe,  btn_profil;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,7 +35,6 @@ public class AddFoodActivity extends AppCompatActivity {
         edt_foodmetarials   = (EditText)findViewById(R.id.edt_foodmetarials);
         edt_cooking         = (EditText)findViewById(R.id.edt_cooking);
         btn_addfood         = (Button)findViewById(R.id.btn_addfood);
-        //gorecipes           = (TextView)findViewById(R.id.tv_backreceips);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Recipes");
         dbRef = FirebaseDatabase.getInstance().getReference("Users");
@@ -52,13 +48,11 @@ public class AddFoodActivity extends AppCompatActivity {
                 foodname        = edt_foodname.getText().toString();
                 foodmetarials   = edt_foodmetarials.getText().toString();
                 cooking         = edt_cooking.getText().toString();
-                //currentby = "Ekleyen : Merve";
 
                 AddFood(foodname, foodmetarials, cooking);
 
                 Toast.makeText(AddFoodActivity.this,"Yeni Tarif Eklediniz :)", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(AddFoodActivity.this, RecipesActivity.class));
-
             }
         });
 
@@ -79,7 +73,6 @@ public class AddFoodActivity extends AppCompatActivity {
     }
 
     public void AddFood(String food_name, String food_metarials, String food_make){
-
 
         String ContactsIDFromServer = databaseReference.push().getKey();
         String userid = firebaseAuth.getCurrentUser().getUid();

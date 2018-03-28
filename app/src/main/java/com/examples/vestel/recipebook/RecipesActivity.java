@@ -23,12 +23,15 @@ public class RecipesActivity extends AppCompatActivity {
 
     private RecyclerView recyclerView;
     private List<Food> list_food;
+
     private DatabaseReference databaseReference ;
     private FirebaseDatabase firebaseDatabase ;
     private FirebaseAuth  firebaseAuth;
     private FirebaseUser firebaseUser;
+
     private String ContactIDFromServer;
     private Food f;
+    private Button btn_allrecipes;
 
     Button gofoodadd;
 
@@ -36,6 +39,7 @@ public class RecipesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recipes);
+
 
         gofoodadd = (Button)findViewById(R.id.goaddfood);
         gofoodadd.setOnClickListener(new View.OnClickListener() {
@@ -100,4 +104,6 @@ public class RecipesActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }

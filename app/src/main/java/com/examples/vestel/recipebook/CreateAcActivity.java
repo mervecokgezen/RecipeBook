@@ -25,7 +25,6 @@ public class CreateAcActivity extends AppCompatActivity {
     EditText edtnamesurname, edtemail, edtpass;
     TextView backlogin;
     Button signup;
-    String uuserid;
 
     DatabaseReference databaseReference;
     FirebaseAuth firebaseAuth;
@@ -45,7 +44,6 @@ public class CreateAcActivity extends AppCompatActivity {
 
         signup      = (Button)findViewById(R.id.btnsignup);
         backlogin   = (TextView)findViewById(R.id.tvbacktologin);
-        uuserid = "";
 
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,7 +88,6 @@ public class CreateAcActivity extends AppCompatActivity {
     public void AddUser(String anamesurname, String amail, String apass ){
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
-        //String userid = firebaseAuth.getCurrentUser().getUid();
         String ContactsIDFromServer = databaseReference.push().getKey();
         User user = new User(anamesurname, amail, apass,ContactsIDFromServer);
         databaseReference.child("Users").child(ContactsIDFromServer).setValue(user);

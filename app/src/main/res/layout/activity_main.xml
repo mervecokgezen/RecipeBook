@@ -45,7 +45,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="e-mail"
-            android:text="akgormusmerve.yz@gmail.com"
             android:id="@+id/edtmail"/>
 
         <TextView
@@ -60,7 +59,6 @@
             android:layout_height="wrap_content"
             android:hint="şifre"
             android:inputType="numberPassword"
-            android:text="123456"
             android:id="@+id/edtsifre"/>
 
         <Button
@@ -98,17 +96,7 @@
             />
 
     </LinearLayout>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:text="veya"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_marginTop="12dp"
-            android:textSize="14sp"
-            android:layout_height="wrap_content"
-            android:text="GİRİŞ YAPMADAN DEVAM ET!"/>
+
     </LinearLayout>
 
     </ScrollView>

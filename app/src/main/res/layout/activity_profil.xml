@@ -51,6 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Kullanıcı Adı"
+            android:id="@+id/tv_kullaniciadi"
             android:textSize="22sp"/>
     </LinearLayout>
 
